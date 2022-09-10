@@ -1,0 +1,17 @@
+central{
+    text-align: center;
+    font-size: 20px;
+}
+body{
+    background-color: sandybrown;
+}
+h1{
+    text-align: center;
+    padding: 5%;
+    border: 10px solid black;
+}
+#banner{
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
