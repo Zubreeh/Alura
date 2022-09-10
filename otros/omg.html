@@ -1,0 +1,40 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    var pantalla = document.querySelector("canvas"); // se define el canvas y el pincel
+    var pincel = pantalla.getContext("2d");
+
+    // estilo del canvas
+
+    pincel.fillStyle = "grey";
+    pincel.fillRect(0,0,600,400);
+
+    // se definen funciones
+
+    function alertar(evento){
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;
+        console.log(evento);
+        alert(x + ',' + y);
+    }
+
+    function circulo(evento){
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;  
+        pincel.fillStyle = "red";
+        pincel.beginPath();
+        pincel.arc(x,y,10,0,2*3.14);
+        pincel.fill();
+        console.log(evento);
+    }
+
+    function click(evento){
+        var a = evento.pageX - pantalla.offsetLeft;
+        var b = evento.pageY - pantalla.offsetTop;  
+        circulo();
+        a++;
+    }
+    
+    pantalla.onclick = circulo();
+    
+</script>
